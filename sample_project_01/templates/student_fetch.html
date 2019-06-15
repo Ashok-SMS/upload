@@ -1,0 +1,84 @@
+<html>
+<head>
+    <title>Fetch Data</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+</head>
+
+<style>
+    tr{
+        text-align: center;
+    }
+    th,td{
+        padding: 10px 20px;
+    }
+    tbody:nth-of-type(odd){
+        background-color:darkblue;
+        color: white;
+    }
+    tbody:nth-of-type(even){
+        background-color: deeppink;
+        color: white;
+    }
+    thead{
+        background-color: green;
+        color: white;
+    }
+    body{
+        background-color: cyan;
+    }
+    h1{
+        font-size: 50px;
+        text-shadow: 5px 5px 5px red;
+    }
+    button{
+        color:red;
+        background-color: chartreuse;
+        padding: 2px ;
+    }
+</style>
+
+
+
+<body>
+<h1 class="text-center">Product Details</h1>
+{% if stdinfo %}
+    <center>
+        <table border="2px">
+            <thead>
+            <tr>
+                <th>Rno</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>City</th>
+                <th>Result</th>
+            </tr>
+            </thead>
+            {% for i in stdinfo %}
+                <tbody>
+                <tr>
+                    <td> {{ i.rno }}</td>
+                    <td> {{ i.sname }}</td>
+                    <td> {{ i.category }}</td>
+                    <td> {{ i.city }}</td>
+                    <td> {{ i.result }}</td>
+                </tr>
+                </tbody>
+            {% endfor %}
+        </table>
+    </center>
+{% else %}
+    <h1>Data is not Available</h1>
+{% endif %}
+<br>
+<center><a href="/#/"><button >Goto Home Page</button></a></center>
+
+
+
+</body>
+</html>

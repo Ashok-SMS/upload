@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>Insert Form</title>
+    <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}">
+</head>
+<style>
+    form{
+        border: 2px solid red;
+        padding: 20px;
+        border-radius: 20px;
+        box-shadow: 20px 20px 20px coral, -20px -20px 20px darksalmon;
+        margin-top: 20px;
+    }
+    h3{
+        font-size: 50px;
+        font-family: cursive;
+        text-shadow: 3px 3px 3px red;
+    }
+    body{
+        background-color: cyan;
+    }
+    .adiv{
+        margin-top: 150px;
+    }
+    a{
+        color: black;
+    }
+     button{
+        color:red;
+        background-color: chartreuse;
+        padding: 2px ;
+    }
+</style>
+<body>
+<div class="container">
+    <center><h3>Please Insert Data</h3></center>
+    <div class="row">
+        <div class="offset-md-3 col-md-6">
+            <form method="POST">
+                {% csrf_token %}
+                {{ iform }}
+                <center>
+                <input type="submit" value="Send" class="btn btn-success">
+                <input type="reset" value="Clear" class="btn btn-danger">
+                </center>
+            </form>
+        </div>
+
+    </div>
+
+    <center>   <a href="/#/"><button>Goto Home Page</button></a></center>
+
+</div>
+</body>
+</html>
